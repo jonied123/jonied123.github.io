@@ -1,6 +1,7 @@
 let dictionary = JSON.parse(localStorage.getItem('dictionary')) || {};
 
-function addVocabulary(){
+
+function addVocabulary() {
     dictionary[englishText.value] = germanText.value;
     englishText.value = '';
     germanText.value = '';
@@ -8,6 +9,8 @@ function addVocabulary(){
     localStorage.setItem('dictionary', JSON.stringify(dictionary));
 }
 
-function render(){
-    vocabularyList.innerHTML += '<li>Test</li>';
+function render() {
+    for (let key in dictionary) {
+        vocabularyList.innerHTML += '<li>'+key+ ' | '+ dictionary[key]+'</li>'
+    }
 }
