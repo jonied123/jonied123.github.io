@@ -13,7 +13,7 @@
     <script src="script.js"></script>
 </head>
 
-<body>
+<body onload="showVocabulary()">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row">
@@ -38,18 +38,18 @@
         <main class="mdl-layout__content">
             <div class="page-content"><!-- Your content goes here -->
                 What is: 
-                <h1>{Word}</h1>
+                <h1 id="EnglishWord"></h1>
                 in German?
-                <form action="#">
+                <form onsubmit="compare(); return false;">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" id="sample3">
-                        <label class="mdl-textfield__label" for="sample3">German...</label>
+                        <input required class="mdl-textfield__input" type="text" id="inputGerman">
+                        <label class="mdl-textfield__label" for="inputGerman">German...</label>
                     </div>
-                    <button onclick="addVocabulary()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                        Button
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                        Check
                     </button>
                 </form>
-
+                <h2 id="trueFalse"></h2>
 
 
             </div>
